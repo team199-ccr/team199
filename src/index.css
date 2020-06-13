@@ -1,27 +1,125 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+:root{
+  --icon-color: #FF555D;
+  --secondary-color: #352740;
+  --primary-color: #CF2020;
+  --primary-color-darker: #A62706;
+  --text-color: #ffffff;
+
+  
+  --neu-h1: -2px;
+  --neu-v1: -2px;
+  --neu-blur1: 6px;
+
+  --neu-h2: 4px;
+  --neu-v2: 4px;
+  --neu-blur2: 6px;
+
+  --neu-light: rgba(255, 255, 255, 0.2);
+  --neu-lighter: rgba(255, 255, 255, 0.3);
+  --neu-dark:  rgba(0, 0, 0, .3);
+  --neu-darker:  rgba(0, 0, 0, .5);
+}
 
 *{
   margin: 0;
+  font-size: 1rem;
   font-family: Roboto;
   text-decoration: none;
   color: black;
+  font-family: 'Nunito', sans-serif;
+}
+.container{
+  max-width: 45rem;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
 }
 
-#header ul{
-  list-style: none;
-  padding: 0;
+#homepage {
+  min-height: 100vh;
   display: flex;
-  background:red ;
+  align-items: center;
+  justify-content: center;
 }
-#header ul li{
-  padding: 0.5rem;
-  font-size: 1.2rem;
-  margin: 0 1rem;
-  cursor: pointer;
+
+#homepage .logo{
+  margin: auto;
+  width: 75%;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
 }
-#header ul li:hover{
-  background: yellow;
+#homepage .logo img{
+  width: 100%;
+  height: auto;
 }
-#header ul li:first-child{
-  margin-right: auto;
+#homepage .welcome-message{
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin: 0px 0px 1rem;
+}
+
+#homepage .login{
+  display: flex;
+  flex-direction: column;
+}
+#homepage .login input{
+  color: var(--text-color);
+  text-align: center;
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  background: none;
+  margin: none;
+  border-radius: 2rem;
+  border: none;
+  box-shadow: 
+  var(--neu-h2) var(--neu-v2) var(--neu-blur2) var(--neu-dark) inset,
+  var(--neu-h1) var(--neu-v1) var(--neu-blur1) var(--neu-light) inset;
+}
+#homepage .login input::placeholder{
+  color: var(--text-color);
+  opacity: 0.6;
+}
+#homepage .login input:focus{
+  outline: none;
+}
+#homepage .login button{
+  padding: 0.5rem 1rem;
+  margin: 0 0 2rem;
+  background: var(--primary-color);
+  background-image: linear-gradient(var(--primary-color),var(--primary-color-darker));
+  border: none;
+  border-radius: 2rem;
+  outline: none;
+
+  transition: box-shadow 1ms;
+  box-shadow:
+  var(--neu-h1) var(--neu-v1) var(--neu-blur1) var(--neu-light),
+  var(--neu-h2) var(--neu-v2) var(--neu-blur2) var(--neu-dark);
+}
+
+#homepage .login button:hover{
+  box-shadow: none;
+}
+#homepage .login button:focus{
+  box-shadow: 
+  var(--neu-h2) var(--neu-v2) var(--neu-blur2) var(--neu-darker) inset,
+  var(--neu-h1) var(--neu-v1) var(--neu-blur1) var(--neu-lighter) inset;
+}
+
+#homepage .login .new-account{
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0px 4rem;
+}
+#homepage .login .new-account p{
+  margin-right: 0.5rem;
+  color: var(--text-color)
+}
+#homepage .login .new-account a{
+  color: var(--primary-color)
 }
