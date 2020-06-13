@@ -1,28 +1,30 @@
-require('dotenv').config();
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
-const express = require('express');
-require('express-async-errors');
-const morgan = require('morgan');
-const helmet = require('helmet');
-const cors = require('cors');
-const logger = require('./helper/logger');
-const routes = require('./routes');
+import {Header} from './components'
 
-const app = express();
+import {Homepage} from './pages'
 
-app.use(helmet());
+function App() {
+  return (
+    <Router>
+      <Header/>
+      <Switch>
 
-app.use(morgan('dev'));
-app.use(cors());
-app.use(express.json());
+        <Route exact path="/">
+          <Homepage/>
+        </Route>
 
-app.use(routes);
+        <Route path="/">
+          404 - FEZ MERDA AE GORDÃO, NÃO SEI ONDE TU QUERIA CHEGAR
+        </Route>
+      </Switch>
+    </Router>
+  );
+}
 
-app.use(async (error, req, res) => {
-  logger.error(error);
-  return res.status(500).json({ error: 'Houve um erro no servidor' });
-});
-
-app.listen(process.env.PORT || 3000, () =>
-  logger.info(`API on port: ${process.env.PORT || 3000}`)
-);
+export default App;
