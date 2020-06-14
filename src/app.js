@@ -19,7 +19,7 @@ function App() {
           <Maps />
         </Route>
         <Route path="/">
-          404 
+          404
         </Route>
       </Switch>
     </Router>
