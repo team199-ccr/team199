@@ -39,10 +39,5 @@ npm run lint
 
 ```
 #PORT=
-MAIL_HOST=
-MAIL_PORT=
-MAIL_USER=
-MAIL_PASS=
 MONGO_URL=
-JWT_KEY
 ```
