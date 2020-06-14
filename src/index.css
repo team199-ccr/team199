@@ -70,7 +70,7 @@
 #homepage .login input{
   color: var(--text-color);
   text-align: center;
-  margin: 1rem 0;
+  margin: 1rem 0px;
   padding: 0.5rem 1rem;
   background: none;
   margin: none;
@@ -89,7 +89,7 @@
 }
 #homepage .login button{
   padding: 0.5rem 1rem;
-  margin: 0 0 2rem;
+  margin: 0px 0px 2rem;
   background: var(--primary-color);
   background-image: linear-gradient(var(--primary-color),var(--primary-color-darker));
   border: none;
