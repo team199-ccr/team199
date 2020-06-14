@@ -15,6 +15,7 @@ routes.get('/', (req, res) => {
 routes.post('/trucker', TruckerController.store);
 routes.post('/merchant', MerchantController.store);
 routes.get('/merchants/', MerchantController.findAll);
+routes.put('/merchant/:id', MerchantController.update);
 routes.get('/merchants/:lat/:long', MerchantController.findByLocation);
 routes.get(`/telephone/:telephone`, MainController.findOne);
 
