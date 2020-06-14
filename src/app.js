@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 
 import {Homepage} from './pages'
+import {Maps} from './components'
 
 function App() {
   return (
@@ -14,8 +15,11 @@ function App() {
         <Route exact path="/">
           <Homepage/>
         </Route>
+        <Route path="/teste-mapa">
+          <Maps />
+        </Route>
         <Route path="/">
-          404 - FEZ MERDA AE GORDÃO, NÃO SEI ONDE TU QUERIA CHEGAR
+          404
         </Route>
       </Switch>
     </Router>
