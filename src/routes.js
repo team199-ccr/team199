@@ -2,15 +2,19 @@ const routes = require('express').Router();
 const multer = require('multer');
 const multerConfig = require('./config/multer');
 const MailController = require('./app/controllers/MailController');
-const UserController = require('./app/controllers/UserController');
+const TruckerController = require('./app/controllers/TruckerController');
+const MainController = require('./app/controllers/MainController');
+const MerchantController = require('./app/controllers/MerchantController');
+
 const authMid = require('./app/middlewares/auth');
 
 routes.get('/', (req, res) => {
-  res.json({ msg: 'Mail Service OK' });
+  res.json({ msg: 'Rango API OK!' });
 });
 
-routes.post('/user', UserController.store);
-routes.post('/auth', UserController.auth);
+routes.post('/trucker', TruckerController.store);
+routes.post('/merchant', MerchantController.store);
+routes.get(`/telephone/:telephone`, MainController.findOne);
 
 routes.use(authMid);
 
