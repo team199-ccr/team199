@@ -20,7 +20,7 @@ class UserController {
 
     if (!(await bcrypt.compare(password, user.password))) {
       return res.status(401).json({
-        error: 'Credenciais invalidas',
+        error: 'Credenciais inválidas',
       });
     }
 
