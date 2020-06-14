@@ -1,7 +1,4 @@
 const routes = require('express').Router();
-const multer = require('multer');
-const multerConfig = require('./config/multer');
-const MailController = require('./app/controllers/MailController');
 const TruckerController = require('./app/controllers/TruckerController');
 const MainController = require('./app/controllers/MainController');
 const MerchantController = require('./app/controllers/MerchantController');
@@ -20,7 +17,5 @@ routes.get('/merchants/:lat/:long', MerchantController.findByLocation);
 routes.get(`/telephone/:telephone`, MainController.findOne);
 
 routes.use(authMid);
-
-routes.post('/mail', MailController.store);
 
 module.exports = routes;
