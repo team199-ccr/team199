@@ -1,5 +1,6 @@
 const truckerModel = require('../models/trucker');
 const merchantModel = require('../models/merchant');
+const { update } = require('../models/trucker');
 
 class TruckerController {
   async store(req, res) {
