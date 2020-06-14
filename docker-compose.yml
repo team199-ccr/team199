@@ -21,9 +21,3 @@ services:
     container_name: api-mongodb
     ports:
       - 27017:27017
-
-  mailhog:
-    image: mailhog/mailhog
-    ports:
-      - 1025:1025
-      - 8025:8025
