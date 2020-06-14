@@ -19,7 +19,7 @@ function App() {
           <Maps />
         </Route>
         <Route path="/">
-          404 - FEZ MERDA AE GORDÃO, NÃO SEI ONDE TU QUERIA CHEGAR
+          404 
         </Route>
       </Switch>
     </Router>
