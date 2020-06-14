@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
+/* 
+                                                                      | */
+/* INITAL CSS AND ROOT VARIABLES ------------------------------------*/
 :root{
   --icon-color: #FF555D;
   --secondary-color: #352740;
@@ -8,17 +11,17 @@
   --text-color: #ffffff;
 
   
-  --neu-h1: -2px;
-  --neu-v1: -2px;
-  --neu-blur1: 6px;
+  --neu-h1: -1px;
+  --neu-v1: -1px;
+  --neu-blur1: 4px;
 
-  --neu-h2: 4px;
-  --neu-v2: 4px;
-  --neu-blur2: 6px;
+  --neu-h2: 2px;
+  --neu-v2: 2px;
+  --neu-blur2: 2px;
 
-  --neu-light: rgba(255, 255, 255, 0.2);
+  --neu-light: rgba(255, 255, 255, 0.1);
   --neu-lighter: rgba(255, 255, 255, 0.3);
-  --neu-dark:  rgba(0, 0, 0, .3);
+  --neu-dark:  rgba(0, 0, 0, .1);
   --neu-darker:  rgba(0, 0, 0, .5);
 }
 
@@ -30,25 +33,68 @@
   color: black;
   font-family: 'Nunito', sans-serif;
 }
+/* STYLES -----------------------------------------------------------*/
 .container{
   max-width: 45rem;
   display: flex;
   flex-direction: column;
   padding: 2rem;
 }
-@media(min-width:720px){
-  #homepage .container{
-    max-width: 30rem;
-  }
+
+.input-primary{
+  background-color: rgba(0, 0, 0, .01);
+  color: var(--text-color);
+  text-align: center;
+  margin: 1rem 0px;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  border: none;
+  box-shadow: 
+  var(--neu-h2) var(--neu-v2) var(--neu-blur2) var(--neu-dark) inset,
+  var(--neu-h1) var(--neu-v1) var(--neu-blur1) var(--neu-light) inset;
+}
+.input-primary::placeholder{
+  color: var(--text-color);
+  opacity: 0.6;
+}
+.input-primary:focus{
+  outline: none;
+}
+.button-primary{
+  padding: 0.5rem 1rem;
+  margin: 0 0 1rem;
+  background: var(--primary-color);
+  background-image: linear-gradient(var(--primary-color),var(--primary-color-darker));
+  border: none;
+  border-radius: 2rem;
+  outline: none;
+  color: var(--text-color);
+  transition: box-shadow 1ms;
+  box-shadow:
+  var(--neu-h1) var(--neu-v1) var(--neu-blur1) var(--neu-light),
+  var(--neu-h2) var(--neu-v2) var(--neu-blur2) var(--neu-dark);
 }
 
+.button-primary:hover{
+  box-shadow: none;
+}
+.button-primary:focus{
+  box-shadow: 
+  var(--neu-h2) var(--neu-v2) var(--neu-blur2) var(--neu-darker) inset,
+  var(--neu-h1) var(--neu-v1) var(--neu-blur1) var(--neu-lighter) inset;
+}
+/* HOMEPAGE ---------------------------------------------------------*/
 #homepage {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
+@media(min-width:720px){
+  #homepage .container{
+    max-width: 30rem;
+  }
+}
 #homepage .logo{
   margin: auto;
   width: 75%;
@@ -67,63 +113,24 @@
   color: var(--text-color);
   margin: 0px 0px 1rem;
 }
-
 #homepage .login{
   display: flex;
   flex-direction: column;
 }
-#homepage .login input{
-  color: var(--text-color);
-  text-align: center;
-  margin: 1rem 0px;
-  padding: 0.5rem 1rem;
-  background: none;
-  border-radius: 2rem;
-  border: none;
-  box-shadow: 
-  var(--neu-h2) var(--neu-v2) var(--neu-blur2) var(--neu-dark) inset,
-  var(--neu-h1) var(--neu-v1) var(--neu-blur1) var(--neu-light) inset;
-}
-#homepage .login input::placeholder{
-  color: var(--text-color);
-  opacity: 0.6;
-}
-#homepage .login input:focus{
-  outline: none;
-}
-#homepage .login button{
-  padding: 0.5rem 1rem;
-  margin: 0px 0px 2rem;
-  background: var(--primary-color);
-  background-image: linear-gradient(var(--primary-color),var(--primary-color-darker));
-  border: none;
-  border-radius: 2rem;
-  outline: none;
-
-  transition: box-shadow 1ms;
-  box-shadow:
-  var(--neu-h1) var(--neu-v1) var(--neu-blur1) var(--neu-light),
-  var(--neu-h2) var(--neu-v2) var(--neu-blur2) var(--neu-dark);
-}
-
-#homepage .login button:hover{
-  box-shadow: none;
-}
-#homepage .login button:focus{
-  box-shadow: 
-  var(--neu-h2) var(--neu-v2) var(--neu-blur2) var(--neu-darker) inset,
-  var(--neu-h1) var(--neu-v1) var(--neu-blur1) var(--neu-lighter) inset;
-}
-
 #homepage .login .new-account{
   display: flex;
   justify-content: center;
-  margin: 1rem 0px 4rem;
+  margin: 0px 0px 4rem;
 }
 #homepage .login .new-account p{
   margin-right: 0.5rem;
+  font-size: 0.8rem;
   color: var(--text-color)
 }
 #homepage .login .new-account a{
+  font-size: 0.8rem;
   color: var(--primary-color)
+}
+#homepage .login .new-account a:hover,#homepage .login .new-account a:focus{
+  text-decoration: underline;
 }
