@@ -81,7 +81,7 @@ const darkModeMapStyle= [
     stylers: [{color: '#17263c'}]
   }
 ]
-
+  
 const Maps = (props) => {
   return (
     <Map 
