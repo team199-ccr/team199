@@ -1,3 +1,3 @@
-import Header from './Header'
+import Maps from './Maps'
 
-export { Header }
+export { Maps }
