@@ -27,6 +27,15 @@ class MerchantController {
 
     return res.status(200).json(merchantsFiltered);
   }
+  async update(req, res) {
+    const merchant = await merchantModel.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true, useFindAndModify: false }
+    );
+
+    return res.status(201).json(merchant);
+  }
 }
 
 module.exports = new MerchantController();
