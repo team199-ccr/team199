@@ -15,7 +15,7 @@ const HomePage = () => {
 
         <div className="login">
 
-          <input inputmode="numeric" placeholder="Insira seu número"/>
+          <input inputMode="numeric" placeholder="Insira seu número"/>
           <button>
             Enviar o código
           </button>
