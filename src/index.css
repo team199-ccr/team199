@@ -36,6 +36,11 @@
   flex-direction: column;
   padding: 2rem;
 }
+@media(min-width:720px){
+  #homepage .container{
+    max-width: 30rem;
+  }
+}
 
 #homepage {
   min-height: 100vh;
