@@ -4,7 +4,7 @@ import React from 'react';
  
 const HomePage = () => {
   return (
-    <div id="homepage" style={{backgroundColor:'var(--secondary-color)'}}>
+    <div id="homepage">
       <div className="container">
 
         <div className="logo">
