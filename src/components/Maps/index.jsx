@@ -1,9 +1,5 @@
 import React from 'react';
-<<<<<<< Updated upstream
 import { Map,Marker,Circle, GoogleApiWrapper } from 'google-maps-react'
-=======
-import { Map,Marker, GoogleApiWrapper } from 'google-maps-react'
->>>>>>> Stashed changes
 
 const darkModeMapStyle= [
   {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
@@ -97,7 +93,6 @@ const Maps = (props) => {
       }}
       styles={darkModeMapStyle}
     >
-<<<<<<< Updated upstream
       {props.marker && 
         <Marker 
           icon={{
@@ -123,28 +118,6 @@ const Maps = (props) => {
         />
       }
 
-=======
-      <Marker 
-        icon={{
-          url: "/images/food.png",
-          scaledSize: new props.google.maps.Size(50,50)
-        }}
-        title={'Food'}
-        name={'Food place'}
-        position={{lat: -22.8749664,lng: -43.242477}}
-      />
-
-      <Marker 
-        icon={{
-          url: "/images/food.png",
-          scaledSize: new props.google.maps.Size(50,50)
-        }}
-        title={'Food'}
-        name={'Food place'}
-        position={{lat:-22.8784198,lng: -43.2722129}}
-       
-      />
->>>>>>> Stashed changes
     </Map>
     )
 }
