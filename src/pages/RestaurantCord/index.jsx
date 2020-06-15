@@ -63,8 +63,15 @@ const RestaurantCord =(props) =>{
     </div>)}
 
     {haveGeolocation && (
-    (havePermision === false && 'NÃO TEM PERMISSÃO')||
-    (havePermision === 'denied' && 'BLOQUEOU A PERMISSÃO')||
+    (havePermision === false && (
+      <div className="permission-message">
+        <p className="title">NÃO TEMOS PERMISSÃO</p>
+        <p className="message">Nos dê permissão para acessar a sua localização</p>
+      </div>))||
+    (havePermision === 'denied' && (
+      <div className="permission-message">
+        <p className="title">BLOQUEOU A PERMISSÃO</p>
+      </div>))||
     (havePermision === 'accepted' && 
       <div id="restaurant-confirm-map">
         <button id="confirmButton" className="button-primary" onClick={saveCoords}>
