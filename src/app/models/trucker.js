@@ -11,6 +11,10 @@ const TruckerSchema = mongoose.Schema(
       required: true,
       unique: true,
     },
+    consent: {
+      type: Boolean,
+      required: true,
+    },
   },
   {
     timestamps: true,
