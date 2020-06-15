@@ -5,8 +5,7 @@ import {
   Route
 } from "react-router-dom";
 
-import {Homepage} from './pages'
-import {Maps} from './components'
+import {Homepage, RestaurantCord, PageNotFound} from './pages'
 
 function App() {
   return (
@@ -15,11 +14,11 @@ function App() {
         <Route exact path="/">
           <Homepage/>
         </Route>
-        <Route path="/teste-mapa">
-          <Maps />
+        <Route exact path="/verificar-comerciante/:id">
+          <RestaurantCord/>
         </Route>
         <Route path="/">
-          404
+          <PageNotFound />
         </Route>
       </Switch>
     </Router>

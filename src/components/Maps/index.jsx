@@ -1,5 +1,5 @@
 import React from 'react';
-import { Map,Marker, GoogleApiWrapper } from 'google-maps-react'
+import { Map,Marker,Circle, GoogleApiWrapper } from 'google-maps-react'
 
 const darkModeMapStyle= [
   {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
@@ -81,38 +81,43 @@ const darkModeMapStyle= [
     stylers: [{color: '#17263c'}]
   }
 ]
-  
+
 const Maps = (props) => {
   return (
     <Map 
       google={props.google}
-      zoom={15}
+      zoom={props.zoom || 4}
       initialCenter={{
-        lat: -22.8749664,
-        lng: -43.242477
+        lat: props.lat || -13.9394829,
+        lng: props.lng || -53.7282113
       }}
       styles={darkModeMapStyle}
     >
-      <Marker 
-        icon={{
-          url: "/images/food.png",
-          scaledSize: new props.google.maps.Size(50,50)
-        }}
-        title={'Food'}
-        name={'Food place'}
-        position={{lat: -22.8749664,lng: -43.242477}}
-      />
+      {props.marker && 
+        <Marker 
+          icon={{
+            url: "/images/food.png",
+            scaledSize: new props.google.maps.Size(50,50),
+            anchor: new props.google.maps.Point(25, 25),
+          }}
+          title={'Food'}
+          name={'Food place'}
+          position={{lat:props.lat,lng:props.lng}}
+          onClick={()=>{}}
+        />
+      }
+      {props.marker && 
+        <Circle 
+          radius={props.accuracy/100}
+          center={{lat:props.lat,lng:props.lng}}
+          strokeColor='transparent'
+          strokeOpacity={0}
+          strokeWeight={5}
+          fillColor='#FF0000'
+          fillOpacity={0.2}
+        />
+      }
 
-      <Marker 
-        icon={{
-          url: "/images/food.png",
-          scaledSize: new props.google.maps.Size(50,50)
-        }}
-        title={'Food'}
-        name={'Food place'}
-        position={{lat:-22.8784198,lng: -43.2722129}}
-       
-      />
     </Map>
     )
 }
