@@ -67,6 +67,7 @@
   background-image: linear-gradient(var(--primary-color),var(--primary-color-darker));
   border: none;
   border-radius: 2rem;
+  cursor: pointer;
   outline: none;
   color: var(--text-color);
   transition: box-shadow 1ms;
@@ -89,6 +90,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color:var(--secondary-color);
 }
 @media(min-width:720px){
   #homepage .container{
@@ -133,4 +135,63 @@
 }
 #homepage .login .new-account a:hover,#homepage .login .new-account a:focus{
   text-decoration: underline;
+}
+
+/* GET COORDINATES PAGE ---------------------------------------------*/
+#confirmButton{
+  position: fixed;
+  z-index: 10;
+  margin-left: -165px ;
+  left: 50%;
+  bottom: 1rem;
+  padding:1.5rem;
+  font-size: 1.2rem;
+}
+.block-everything{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 11;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.block-everything{
+  text-align: center;
+}
+.block-everything .title{
+  color: white;
+  font-size: 5rem;
+}
+
+.block-everything .sub-title{
+  color: white;
+  font-size: 2.5rem;
+}
+
+
+/* 
+                                                                      | */
+/* 404 page ---------------------------------------------------------*/
+#page-not-found{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color:var(--secondary-color);
+  align-items: center;
+  justify-content: center;
+}
+
+#page-not-found p{
+  color: white
+}
+#page-not-found .number{
+  font-size: 15rem;
+}
+#page-not-found .message{
+  font-size: 2rem;
 }
