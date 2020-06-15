@@ -25,6 +25,10 @@ const MerchantSchema = mongoose.Schema(
     longitude: {
       type: Number,
     },
+    consent: {
+      type: Boolean,
+      required: true,
+    },
   },
   {
     timestamps: true,
